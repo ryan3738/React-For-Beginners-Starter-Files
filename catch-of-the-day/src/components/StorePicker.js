@@ -3,6 +3,7 @@ import { getFunName } from "../helpers";
 
 class StorePicker extends React.Component {
   myInput = React.createRef();
+  //Old way to bind this to sub method
   // constructor() {
   //   super();
   //   this.goToStore = this.goToStore.bind(this);
@@ -12,10 +13,10 @@ class StorePicker extends React.Component {
     //1. Stop the form from submitting
     event.preventDefault();
     //2. Get the text from that input
-    console.log(this.myInput.value);
-    // const storeName = this.myInput.value.value;
+    // console.log(this.myInput.current.value);
+    const storeName = this.myInput.current.value;
     //3. Change the page to /store/whatever-they-entered
-    // this.props.history.push(`/store/${storeName}`);
+    this.props.history.push(`/store/${storeName}`);
   };
   render() {
     return (
@@ -28,7 +29,7 @@ class StorePicker extends React.Component {
           placeholder="Store Name"
           defaultValue={getFunName()}
         />
-        <button type="submit">Visit Store > </button>
+        <button type="submit">Visit Store</button>
       </form>
     );
   }
