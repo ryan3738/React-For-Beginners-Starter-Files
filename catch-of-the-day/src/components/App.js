@@ -11,9 +11,33 @@ class App extends React.Component {
     fishes: {},
     order: {}
   };
+
+  //Link to firebase when app component is rendered
   componentDidMount() {
-    // this.ref = base.syncState(``);
+    const { params } = this.props.match;
+    //first reinstate our localStorage
+    const localStorageRef = localStorage.getItem(params.storeId);
+    if (localStorageRef) {
+      this.setState({ order: JSON.parse(localStorageRef) });
+    }
+    this.ref = base.syncState(`${params.storeId}/fishes`, {
+      context: this,
+      state: "fishes"
+    });
   }
+
+  componentDidUpdate() {
+    console.log(this.state.order);
+    localStorage.setItem(
+      this.props.match.params.storeId,
+      JSON.stringify(this.state.order)
+    );
+  }
+  //Unlink to firebase when app component is rendered. If this is not done a memory leak can result.
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
+
   addFish = fish => {
     //1. Take a copy of the existing state
     const fishes = { ...this.state.fishes };
