@@ -4,6 +4,9 @@ import { getFunName } from "../helpers";
 
 class StorePicker extends React.Component {
   myInput = React.createRef();
+  static propTypes = {
+    history: PropTypes.object
+  };
   //Old way to bind this to sub method
   // constructor() {
   //   super();
