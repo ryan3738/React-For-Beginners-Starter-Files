@@ -1,5 +1,5 @@
 {
-  "name": "cotd",
+  "name": "exit",
   "version": "0.0.3",
   "private": true,
   "devDependencies": {
@@ -7,22 +7,17 @@
     "react-scripts": "^3.3.0"
   },
   "dependencies": {
-    "ajv": "^6.12.0",
-    "ajv-keywords": "^3.4.1",
     "autoprefixer-stylus": "0.14.0",
     "browserslist": "^4.9.1",
-    "core-js": "^3.6.4",
     "firebase": "^7.10.0",
     "prop-types": "^15.6.0",
-    "re-base": "^4.0.0",
+    "re-base": "4.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
-    "rebase": "^0.3.0",
     "serve": "^10.1.2",
-    "stylus": "0.54.5",
-    "typescript": "^3.8.3"
+    "stylus": "0.54.5"
   },
   "scripts": {
     "dev": "react-scripts start",
@@ -38,5 +33,16 @@
     ">0.2%",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "main": "cd..",
+  "repository": {
+    "type": "git",
+    "url": "exit"
+  },
+  "keywords": [
+    "cancel"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
