@@ -16,8 +16,10 @@
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
+    "rebase": "^0.3.0",
     "serve": "^10.1.2",
-    "stylus": "0.54.5"
+    "stylus": "0.54.5",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "dev": "react-scripts start",
